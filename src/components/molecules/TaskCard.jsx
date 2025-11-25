@@ -90,13 +90,21 @@ const TaskCard = ({
               {task.title}
             </h3>
             
-            {task.description && (
-              <p className={cn(
-                "text-sm text-gray-600 mb-3 line-clamp-2",
-                task.completed && "text-gray-400"
-              )}>
-                {task.description}
-              </p>
+{task.description && (
+              <div 
+                className={cn(
+                  "text-sm text-gray-600 mb-3 prose prose-sm max-w-none",
+                  "prose-headings:text-gray-800 prose-headings:font-medium",
+                  "prose-p:text-gray-600 prose-p:leading-relaxed prose-p:my-1",
+                  "prose-strong:text-gray-700 prose-em:text-gray-600",
+                  "prose-ul:text-gray-600 prose-ol:text-gray-600",
+                  "prose-li:text-gray-600 prose-blockquote:text-gray-600",
+                  "prose-code:text-gray-800 prose-code:bg-gray-100",
+                  "prose-a:text-primary-600 hover:prose-a:text-primary-700",
+                  task.completed && "prose-p:text-gray-400 prose-headings:text-gray-400 prose-strong:text-gray-400"
+                )}
+                dangerouslySetInnerHTML={{ __html: task.description }}
+              />
             )}
             
             <div className="flex items-center space-x-3">

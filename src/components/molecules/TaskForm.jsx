@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ReactQuill from "react-quill"
 import Input from "@/components/atoms/Input"
 import Select from "@/components/atoms/Select"
 import Button from "@/components/atoms/Button"
@@ -56,7 +57,7 @@ const TaskForm = ({
     setErrors({})
   }
 
-  const handleChange = (field) => (e) => {
+const handleChange = (field) => (e) => {
     setFormData(prev => ({
       ...prev,
       [field]: e.target.value
@@ -71,6 +72,37 @@ const TaskForm = ({
     }
   }
 
+  const handleDescriptionChange = (value) => {
+    setFormData(prev => ({
+      ...prev,
+      description: value
+    }))
+    
+    // Clear error when user starts typing
+    if (errors.description) {
+      setErrors(prev => ({
+        ...prev,
+        description: ""
+      }))
+    }
+  }
+
+  const quillModules = {
+    toolbar: [
+      [{ 'header': [1, 2, false] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      ['blockquote', 'code-block'],
+      ['link'],
+      ['clean']
+    ]
+  }
+
+  const quillFormats = [
+    'header', 'bold', 'italic', 'underline', 'strike',
+    'list', 'bullet', 'blockquote', 'code-block', 'link'
+  ]
+
   return (
     <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
       <Input
@@ -82,17 +114,24 @@ const TaskForm = ({
         icon="Edit3"
       />
       
-      <div>
+<div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Description
         </label>
-        <textarea
-          placeholder="Add more details about this task..."
-          value={formData.description}
-          onChange={handleChange("description")}
-          rows={3}
-          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
-        />
+        <div className="task-form">
+          <ReactQuill
+            theme="snow"
+            value={formData.description}
+            onChange={handleDescriptionChange}
+            placeholder="Add more details about this task..."
+            modules={quillModules}
+            formats={quillFormats}
+            className="bg-white rounded-lg border border-gray-200 focus-within:ring-2 focus-within:ring-primary-500 focus-within:border-transparent transition-all duration-200"
+          />
+        </div>
+        {errors.description && (
+          <p className="mt-1 text-sm text-error-600">{errors.description}</p>
+        )}
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

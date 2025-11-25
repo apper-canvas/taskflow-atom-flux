@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'react-toastify/dist/ReactToastify.css';
+@import 'react-quill/dist/quill.snow.css';
 
 @layer base {
   * {
@@ -54,4 +55,38 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-400;
+}
+
+/* ReactQuill Editor Styling */
+.ql-editor {
+  @apply text-gray-900 leading-relaxed;
+  font-family: 'Inter', sans-serif;
+  min-height: 120px;
+  padding: 12px 16px;
+}
+
+.ql-editor.ql-blank::before {
+  @apply text-gray-500 italic;
+  font-style: italic;
+}
+
+.ql-toolbar {
+  @apply border-gray-200 border-b rounded-t-lg bg-gray-50;
+}
+
+.ql-container {
+  @apply border-gray-200 rounded-b-lg;
+}
+
+.ql-editor:focus {
+  outline: none;
+}
+
+.task-form .ql-container {
+  @apply border-gray-200;
+}
+
+.task-form .ql-toolbar {
+  @apply border-gray-200;
+}
 }
