@@ -1,0 +1,68 @@
+[
+  {
+    "Id": 1,
+    "title": "Complete project proposal",
+    "description": "Finalize the Q4 project proposal with budget estimates and timeline",
+    "priority": "high",
+    "dueDate": "2024-12-25",
+    "completed": false,
+    "completedAt": null,
+    "createdAt": "2024-12-20T08:00:00Z",
+    "updatedAt": "2024-12-20T08:00:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "Review team performance reports",
+    "description": "Go through monthly performance reports and prepare feedback",
+    "priority": "medium",
+    "dueDate": "2024-12-23",
+    "completed": false,
+    "completedAt": null,
+    "createdAt": "2024-12-19T10:30:00Z",
+    "updatedAt": "2024-12-19T10:30:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "Update project documentation",
+    "description": "Add latest changes to technical documentation",
+    "priority": "low",
+    "dueDate": "2024-12-30",
+    "completed": true,
+    "completedAt": "2024-12-20T14:15:00Z",
+    "createdAt": "2024-12-18T16:45:00Z",
+    "updatedAt": "2024-12-20T14:15:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Client meeting preparation",
+    "description": "Prepare presentation slides and talking points for client meeting",
+    "priority": "high",
+    "dueDate": "2024-12-22",
+    "completed": false,
+    "completedAt": null,
+    "createdAt": "2024-12-20T09:20:00Z",
+    "updatedAt": "2024-12-20T09:20:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "Code review for feature branch",
+    "description": "Review pull requests and provide feedback on new authentication feature",
+    "priority": "medium",
+    "dueDate": null,
+    "completed": false,
+    "completedAt": null,
+    "createdAt": "2024-12-20T11:00:00Z",
+    "updatedAt": "2024-12-20T11:00:00Z"
+  },
+  {
+    "Id": 6,
+    "title": "Weekly team standup",
+    "description": "Prepare updates and blockers for weekly team meeting",
+    "priority": "low",
+    "dueDate": "2024-12-21",
+    "completed": true,
+    "completedAt": "2024-12-20T15:30:00Z",
+    "createdAt": "2024-12-20T07:00:00Z",
+    "updatedAt": "2024-12-20T15:30:00Z"
+  }
+]
